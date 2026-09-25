@@ -1,0 +1,366 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* ── Demo presets ───────────────────────────────────────── */
+.presets {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.presetsLabel {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--label-3);
+  white-space: nowrap;
+  margin-right: 2px;
+}
+
+.presetBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 14px;
+  border-radius: var(--radius-row);
+  background: var(--card);
+  box-shadow: inset 0 0.5px 0 var(--edge);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--label);
+  transition: transform 0.15s var(--spring), opacity 0.15s;
+  text-align: left;
+}
+
+.presetBtn:hover  { opacity: 0.75; transform: scale(1.03); }
+.presetBtn:active { transform: scale(0.97); }
+
+.presetDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.presetName {
+  font-weight: 600;
+  color: var(--label);
+}
+
+.presetDesc {
+  font-size: 11px;
+  color: var(--label-3);
+}
+
+/* ── Grouped inset list ─────────────────────────────────── */
+.group {
+  display: block;
+}
+
+.eyebrow {
+  padding: 0 14px 5px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--label-2);
+}
+
+.rows {
+  background: var(--card);
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
+  border-radius: var(--radius-card);
+  box-shadow: inset 0 0.5px 0 var(--edge), inset 0 0 0 0.5px var(--separator);
+  overflow: hidden;
+}
+
+.footnote {
+  padding: 5px 14px 0;
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--label-2);
+  letter-spacing: -0.005em;
+}
+
+.footnoteError {
+  color: var(--red);
+  font-weight: 500;
+}
+
+/* ── Row ────────────────────────────────────────────────── */
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  min-height: 44px;
+  padding: 6px 14px;
+}
+
+.row + .row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 0;
+  height: 0.5px;
+  background: var(--separator);
+}
+
+.rowLabel {
+  font-size: 17px;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+}
+
+/* ── Number field ───────────────────────────────────────── */
+.numberField {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  margin-left: auto;
+}
+
+.input {
+  width: 88px;
+  padding: 4px 2px;
+  border: none;
+  background: none;
+  font-size: 17px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  text-align: right;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--label-3);
+  font-weight: 400;
+}
+
+.inputError {
+  color: var(--red);
+}
+
+.unit {
+  font-size: 15px;
+  color: var(--label-3);
+  min-width: 34px;
+}
+
+/* ── Segmented control ──────────────────────────────────── */
+.segmented {
+  position: relative;
+  display: flex;
+  flex: 0 1 auto;
+  min-width: 168px;
+  margin-left: auto;
+  padding: 2px;
+  border-radius: 9px;
+  background: var(--fill);
+}
+
+/* Solid, not blurred: nesting backdrop-filters inside a glass card
+   muddies both and costs a compositing layer for no visual gain. */
+.thumb {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  left: 2px;
+  border-radius: 7px;
+  background: #fff;
+  box-shadow: 0 3px 8px #0000001f, 0 1px 1px #00000014;
+  transition: transform 0.32s var(--spring);
+}
+
+@media (prefers-color-scheme: dark) {
+  .thumb {
+    background: #636366;
+  }
+}
+
+.segment {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: var(--label-2);
+  white-space: nowrap;
+  transition: color 0.2s;
+}
+
+.segmentOn {
+  color: var(--label);
+  font-weight: 600;
+}
+
+/* ── Switch ─────────────────────────────────────────────── */
+.switch {
+  position: relative;
+  flex-shrink: 0;
+  width: 51px;
+  height: 31px;
+  margin-left: auto;
+  border-radius: 100px;
+  background: var(--fill);
+  transition: background 0.28s var(--spring);
+}
+
+.switchOn {
+  background: var(--green);
+}
+
+.knob {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 3px 8px #00000026, 0 1px 1px #0000000f;
+  transition: transform 0.28s var(--spring);
+}
+
+.switchOn .knob {
+  transform: translateX(20px);
+}
+
+/* ── Model select ───────────────────────────────────────── */
+.selectWrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  border-radius: 9px;
+  background: var(--fill);
+  color: var(--label-2);
+}
+
+.modelSelect {
+  padding: 6px 28px 6px 10px;
+  border: none;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--label);
+  cursor: pointer;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.modelSelect:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 9px;
+}
+
+.selectChevron {
+  position: absolute;
+  right: 8px;
+  pointer-events: none;
+  color: var(--label-3);
+}
+
+/* ── Actions ────────────────────────────────────────────── */
+.clearWrap {
+  display: flex;
+  justify-content: center;
+}
+
+/* Docked over the content it acts on — the one piece of real
+   chrome in the form, so the one place material belongs. */
+.dock {
+  position: sticky;
+  bottom: 14px;
+  z-index: 5;
+  margin-top: 4px;
+  padding: 10px;
+  border-radius: 21px;
+  background: var(--nav);
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
+  box-shadow: inset 0 0.5px 0 var(--edge), inset 0 0 0 0.5px var(--separator),
+    0 12px 32px #0000001a;
+}
+
+.submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  width: 100%;
+  height: 52px;
+  border-radius: 15px;
+  background: var(--red);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  transition: transform 0.2s var(--spring), opacity 0.2s;
+}
+
+.submit:hover:not(:disabled) {
+  opacity: 0.9;
+}
+
+.submit:active:not(:disabled) {
+  transform: scale(0.975);
+}
+
+.submit:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.clear {
+  height: 44px;
+  padding: 0 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--label-2);
+  transition: opacity 0.2s;
+}
+
+.clear:hover {
+  opacity: 0.6;
+}
+
+/* ── Spinner ────────────────────────────────────────────── */
+.spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid #ffffff59;
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 430px) {
+  .rowLabel {
+    font-size: 16px;
+  }
+  .segmented {
+    min-width: 100%;
+    margin-left: 0;
+  }
+}

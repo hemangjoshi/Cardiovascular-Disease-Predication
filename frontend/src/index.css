@@ -1,0 +1,142 @@
+/* ============================================================
+   CardioPredict — design tokens
+   Apple system palette (iOS 17 semantic colors)
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* — Type — */
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
+    Inter, 'Segoe UI Variable Display', 'Segoe UI', system-ui, sans-serif;
+
+  /* — Accent (fixed across schemes) — */
+  --red: #ff3b30;      /* systemRed    */
+  --pink: #ff2d55;     /* systemPink   */
+  --orange: #ff9500;   /* systemOrange */
+  --green: #34c759;    /* systemGreen  */
+  --blue: #007aff;     /* systemBlue   */
+
+  /* — Light scheme — */
+  --bg: #eef0f6;             /* systemGroupedBackground */
+  --card: #ffffffb8;         /* material over the wash  */
+  --fill: #7878801f;         /* tertiarySystemFill      */
+  --separator: #3c3c431f;    /* opaque separator        */
+  --label: #000000;
+  --label-2: #3c3c4399;      /* secondaryLabel  60%     */
+  --label-3: #3c3c434d;      /* tertiaryLabel   30%     */
+  --nav: #f4f5faa8;
+
+  /* Specular top edge — the detail that reads as glass,
+     more than the blur radius does. */
+  --edge: #ffffffa6;
+  --glass: saturate(180%) blur(30px);
+
+  --wash-a: #ff2d5526;
+  --wash-b: #007aff1f;
+
+  --radius-card: 22px;
+  --radius-row: 14px;
+  --spring: cubic-bezier(0.32, 0.72, 0, 1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #05050a;
+    --card: #1c1c1eab;
+    --fill: #78788052;
+    --separator: #54545885;
+    --label: #ffffff;
+    --label-2: #ebebf599;
+    --label-3: #ebebf54d;
+    --nav: #0a0a0fa8;
+
+    --edge: #ffffff1f;
+    --wash-a: #ff2d552e;
+    --wash-b: #007aff26;
+  }
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--label);
+  line-height: 1.47;
+  letter-spacing: -0.01em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-synthesis-weight: none;
+  min-height: 100vh;
+}
+
+/* Something for the glass to refract. Kept low-contrast on purpose:
+   enough luminance shift to give the material depth, not enough to
+   fight the 17px labels sitting on top of it. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(42% 38% at 18% 8%, var(--wash-a) 0%, transparent 68%),
+    radial-gradient(46% 42% at 88% 78%, var(--wash-b) 0%, transparent 70%);
+  filter: blur(40px);
+}
+
+/* Numbers never jitter as they animate. */
+input,
+button,
+select {
+  font: inherit;
+  color: inherit;
+  letter-spacing: inherit;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Remove spinners — the value is typed, not stepped. */
+input[type='number'] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Keyboard focus stays visible; pointer focus stays quiet. */
+:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--red) 22%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

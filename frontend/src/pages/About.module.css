@@ -1,0 +1,500 @@
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Page header ─────────────────────────────────────────── */
+.header {
+  padding: 56px 0 48px;
+  text-align: center;
+}
+
+.title {
+  font-size: 42px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--label);
+}
+
+.subtitle {
+  margin-top: 14px;
+  font-size: 17px;
+  color: var(--label-2);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin-left: auto;
+  margin-right: auto;
+  letter-spacing: -0.015em;
+}
+
+.disclaimer {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--label-3);
+  font-style: italic;
+}
+
+/* ── Section ─────────────────────────────────────────────── */
+.section {
+  margin-bottom: 48px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--label);
+  margin-bottom: 4px;
+}
+
+.sectionTitle svg {
+  color: var(--red);
+}
+
+/* ── Card ────────────────────────────────────────────────── */
+.card {
+  background: var(--card);
+  border-radius: var(--radius-card);
+  box-shadow: inset 0 0.5px 0 var(--edge);
+  padding: 24px;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: var(--label);
+  margin-bottom: 12px;
+}
+
+.cardTitle svg { color: var(--red); }
+
+.cardSubtitle {
+  font-size: 13px;
+  color: var(--label-2);
+  margin-bottom: 20px;
+  letter-spacing: -0.005em;
+}
+
+.cardBody {
+  font-size: 14px;
+  color: var(--label-2);
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+}
+
+.cardNote {
+  font-size: 12px;
+  color: var(--label-3);
+  font-style: italic;
+  margin-top: 12px;
+  letter-spacing: -0.005em;
+}
+
+/* ── Data stats ──────────────────────────────────────────── */
+.sourceRow {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 0.5px solid var(--separator);
+}
+
+.sourceLabel {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--label-3);
+  white-space: nowrap;
+}
+
+.sourceValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--label);
+}
+
+.dataStats {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.dataStat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.dataStatNum {
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  color: var(--label);
+}
+
+.dataStatLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--label-2);
+}
+
+.dataStatDivider {
+  width: 1px;
+  height: 40px;
+  background: var(--separator);
+}
+
+/* ── Two column ──────────────────────────────────────────── */
+.twoCol {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Ideal ranges ────────────────────────────────────────── */
+.rangeList {
+  display: flex;
+  flex-direction: column;
+}
+
+.rangeRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  border-bottom: 0.5px solid var(--separator);
+  gap: 12px;
+}
+
+.rangeRow:last-child { border-bottom: none; }
+
+.rangeLabel {
+  font-size: 13px;
+  color: var(--label-2);
+}
+
+.rangeValue {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--label);
+}
+
+/* ── Model table ─────────────────────────────────────────── */
+.modelTable {
+  display: flex;
+  flex-direction: column;
+}
+
+.modelTableHead {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 8px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--label-3);
+}
+
+.modelRow {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  padding: 12px 12px;
+  border-top: 0.5px solid var(--separator);
+  border-radius: 10px;
+  transition: background 0.15s;
+}
+
+.modelRow:hover { background: var(--fill); }
+
+.modelRowBest {
+  background: color-mix(in srgb, var(--red) 6%, transparent);
+}
+
+.modelName {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--label);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bestBadge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  border-radius: 100px;
+  background: color-mix(in srgb, var(--red) 14%, transparent);
+  color: var(--red);
+}
+
+.modelScore {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--label);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Feature importance bars ─────────────────────────────── */
+.barList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.barRow {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.barMeta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.barLabel {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--label);
+}
+
+.barValue {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--red);
+  font-variant-numeric: tabular-nums;
+}
+
+.barTrack {
+  height: 8px;
+  border-radius: 100px;
+  background: var(--fill);
+  overflow: hidden;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 100px;
+  background: linear-gradient(90deg, var(--red), var(--pink));
+}
+
+/* ── Architecture grid ───────────────────────────────────── */
+.archGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+}
+
+.archItem {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 14px 0;
+  border-bottom: 0.5px solid var(--separator);
+}
+
+.archItem:nth-last-child(-n+2) { border-bottom: none; }
+
+.archKey {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--label-3);
+}
+
+.archVal {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--label);
+}
+
+/* ── Disclaimer box ──────────────────────────────────────── */
+.disclaimerBox {
+  display: flex;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: var(--radius-card);
+  background: color-mix(in srgb, var(--red) 6%, transparent);
+  border: 0.5px solid color-mix(in srgb, var(--red) 20%, transparent);
+  color: var(--label);
+}
+
+.disclaimerBox svg { color: var(--red); }
+
+.disclaimerTitle {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--red);
+  margin-bottom: 6px;
+}
+
+.disclaimerBody {
+  font-size: 14px;
+  color: var(--label-2);
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* ── Academic card ───────────────────────────────────────── */
+.academicCard {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  background: var(--card);
+  border-radius: var(--radius-card);
+  box-shadow: inset 0 0.5px 0 var(--edge), inset 0 0 0 0.5px var(--separator);
+  padding: 20px 24px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+}
+
+.academicLeft {
+  min-width: 180px;
+  border-right: 0.5px solid var(--separator);
+  padding-right: 24px;
+}
+
+.university {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--label);
+  margin-bottom: 4px;
+}
+
+.department {
+  font-size: 13px;
+  color: var(--label-2);
+  letter-spacing: -0.01em;
+  line-height: 1.45;
+}
+
+.academicRight {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.academicRow {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+}
+
+.academicLabel {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--label-3);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+
+.academicValue {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--label);
+  letter-spacing: -0.01em;
+}
+
+@media (max-width: 520px) {
+  .academicLeft {
+    border-right: none;
+    border-bottom: 0.5px solid var(--separator);
+    padding-right: 0;
+    padding-bottom: 14px;
+    width: 100%;
+  }
+}
+
+/* ── CTA ─────────────────────────────────────────────────── */
+.cta {
+  padding: 8px 0 48px;
+  display: flex;
+  justify-content: center;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  padding: 15px 30px;
+  border-radius: 100px;
+  background: var(--red);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: opacity 0.2s, transform 0.15s var(--spring);
+}
+
+.ctaBtn:hover  { opacity: 0.85; transform: scale(1.03); }
+.ctaBtn:active { transform: scale(0.97); }
+
+/* ── Footer ──────────────────────────────────────────────── */
+.footer {
+  padding: 16px 0 32px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--label-3);
+  border-top: 0.5px solid var(--separator);
+}
+
+.sep {
+  margin: 0 8px;
+  opacity: 0.4;
+}
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 640px) {
+  .title { font-size: 32px; }
+
+  .twoCol {
+    grid-template-columns: 1fr;
+  }
+
+  .modelTableHead,
+  .modelRow {
+    grid-template-columns: 2fr 1fr 1fr;
+  }
+
+  .modelTableHead span:last-child,
+  .modelRow span:last-child {
+    display: none;
+  }
+
+  .archGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .archItem:nth-last-child(-n+2) { border-bottom: 0.5px solid var(--separator); }
+  .archItem:last-child { border-bottom: none; }
+
+  .dataStats { gap: 20px; }
+  .dataStatNum { font-size: 24px; }
+}

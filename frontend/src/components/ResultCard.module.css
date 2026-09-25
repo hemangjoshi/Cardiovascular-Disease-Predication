@@ -1,0 +1,197 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: rise 0.55s var(--spring) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+}
+
+/* ── Signature: the risk ring ───────────────────────────── */
+.ringBlock {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 8px 0 16px;
+}
+
+.ring {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  overflow: visible;
+}
+
+.track {
+  fill: none;
+  stroke-width: 18;
+  opacity: 0.16;
+}
+
+.progress {
+  fill: none;
+  stroke-width: 18;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 1.15s var(--spring);
+}
+
+.center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+  padding-bottom: 40px;
+}
+
+.percent {
+  font-size: 50px;
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.percentMark {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--label-2);
+  padding-bottom: 4px;
+}
+
+/* ── Verdict ────────────────────────────────────────────── */
+.verdict {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+.modelBadge {
+  margin-top: 6px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  background: var(--fill);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--label-2);
+  letter-spacing: -0.005em;
+}
+
+.summary {
+  margin: 8px 0 20px;
+  max-width: 32ch;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--label-2);
+  letter-spacing: -0.015em;
+}
+
+/* ── Read-back list ─────────────────────────────────────── */
+.group {
+  width: 100%;
+}
+
+.eyebrow {
+  padding: 0 16px 7px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--label-2);
+}
+
+.rows {
+  background: var(--card);
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
+  border-radius: var(--radius-card);
+  box-shadow: inset 0 0.5px 0 var(--edge), inset 0 0 0 0.5px var(--separator);
+  overflow: hidden;
+}
+
+.row {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 38px;
+  padding: 7px 14px;
+}
+
+.row + .row::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 16px;
+  right: 0;
+  height: 0.5px;
+  background: var(--separator);
+}
+
+.rowLabel {
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  color: var(--label-2);
+}
+
+.rowValue {
+  font-size: 14px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  text-align: right;
+}
+
+.footnote {
+  padding: 8px 16px 0;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--label-3);
+}
+
+/* ── Action ─────────────────────────────────────────────── */
+.again {
+  margin-top: 16px;
+  height: 44px;
+  width: 100%;
+  border-radius: 13px;
+  background: var(--card);
+  backdrop-filter: var(--glass);
+  -webkit-backdrop-filter: var(--glass);
+  box-shadow: inset 0 0.5px 0 var(--edge), inset 0 0 0 0.5px var(--separator);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--blue);
+  transition: transform 0.2s var(--spring), opacity 0.2s;
+}
+
+.again:hover {
+  opacity: 0.72;
+}
+
+.again:active {
+  transform: scale(0.975);
+}
+
+@media (max-width: 430px) {
+  .ringBlock {
+    width: 160px;
+    height: 160px;
+  }
+  .percent {
+    font-size: 44px;
+  }
+  .verdict {
+    font-size: 22px;
+  }
+}
